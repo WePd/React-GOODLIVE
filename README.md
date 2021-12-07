@@ -26,4 +26,10 @@ yarn add --save axios
   基于express搭建服务器，为页面提供数据
   跨域 -----> cors
 6. axios请求
-
+#### 5. 实现城市管理
+1. 首先实现城市的路由跳转
+    1. 通过leyout设置二级路由
+2. 城市页面实现
+  1. 公共头部
+  2. 点击头部箭头返回， ------》 `window.history.back()`
+  3. 

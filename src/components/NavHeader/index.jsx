@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import './index.css'
 
 
@@ -6,7 +7,7 @@ const NavHeader = () => {
   return (
     <div id="home-header" className="clear-fix">
       <div className="home-header-left float-left">
-        <span>北京</span>
+        <Link to='/city'>成都</Link>
         <i className="icon-angle-down"></i>
       </div>
       <div className="home-header-right float-right">

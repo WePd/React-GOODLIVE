@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import api from '../../../api/index'
+import api from '../../../../api/index'
 import HomeHotView from '../HomeHotView'
 
 const HomeHotList = () => {
@@ -11,7 +11,7 @@ const HomeHotList = () => {
     api.getHomeHot1().then(res => {
       //请求成功
       if (res.data.status === 200) {
-        console.log(res.data.data);
+        // console.log(res.data.data);
         setList_1(res.data.data)
       }
     })
@@ -20,7 +20,7 @@ const HomeHotList = () => {
     api.getHomeHot1().then(res => {
       //请求成功
       if (res.data.status === 200) {
-        console.log(res.data.data);
+        // console.log(res.data.data);
         setList_2(res.data.data)
       }
     })
