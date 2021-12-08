@@ -1,10 +1,14 @@
 import React from 'react'
+import { withRouter } from 'react-router'
 import './index.css'
 
 
-export default function CityList() {
-  const clickCityHandle = () => {
-    console.log('kkkk');
+
+const CityList = (props) => {
+
+  const clickCityHandle = (city) => {
+    props.onEvent(city)
+    props.history.push('/')
   }
   return (
     <div className="city-list-container">
@@ -29,3 +33,5 @@ export default function CityList() {
     </div>
   )
 }
+
+export default withRouter(CityList)

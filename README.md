@@ -32,4 +32,11 @@ yarn add --save axios
 2. 城市页面实现
   1. 公共头部
   2. 点击头部箭头返回， ------》 `window.history.back()`
-  3. 
+  3. 基础redux：存储城市页面，根据城市的不同，渲染不同的UI
+    - Store  Actions  Reducer 
+    - 安装依赖： 
+    ```js
+      yarn add redux
+      yarn add react-redux
+      yarn add redux-devtools-extension
+    ```
