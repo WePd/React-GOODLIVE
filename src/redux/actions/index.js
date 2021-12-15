@@ -1,4 +1,4 @@
-import { INIT_CITY, CHANGE_CITY } from '../constants/index'
+import { INIT_CITY, CHANGE_CITY } from '../constants'
 
 export function initCity(cityName) {
   return {

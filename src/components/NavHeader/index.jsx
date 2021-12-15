@@ -1,13 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom"
-import './index.css'
+import { Link } from "react-router-dom";
+import "./index.css";
 
-
-const NavHeader = () => {
+const NavHeader = (props) => {
   return (
     <div id="home-header" className="clear-fix">
       <div className="home-header-left float-left">
-        <Link to='/city'>成都</Link>
+        <Link to="/city">{props.city}</Link>
         <i className="icon-angle-down"></i>
       </div>
       <div className="home-header-right float-right">
@@ -20,7 +19,7 @@ const NavHeader = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavHeader
+export default NavHeader;

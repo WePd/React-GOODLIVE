@@ -9,11 +9,15 @@ const base = {
 //  请求方法
 const api = {
   //获取首页热门商品
-  getHomeHot1() {
-    return axios.get(base.baseURL + base.homehot1)
+  getHomeHot1(params) {
+    return axios.get(base.baseURL + base.homehot1, {
+      params
+    })
   },
-  getHomeHot2() {
-    return axios.get(base.baseURL + base.homehot2)
+  getHomeHot2(params) {
+    return axios.get(base.baseURL + base.homehot2, {
+      params
+    })
   }
 }
 

@@ -1,6 +1,6 @@
 .hotproduct h3 {
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: normal;
   text-align: center;
 }
@@ -23,5 +23,5 @@
 .hotproduct .hot-container ul li a span {
   display: block;
   text-align: center;
-  font-size: 15px;
+  font-size: 13px;
 }
