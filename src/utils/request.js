@@ -7,8 +7,8 @@ import qs from "querystring"
  * status:状态码
  * info:信息
  */
-const errorHandle = (status,info) =>{
-    switch(status){
+const errorHandle = (status, info) => {
+    switch (status) {
         case 400:
             console.log("语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求。")
             break;
@@ -34,26 +34,23 @@ const errorHandle = (status,info) =>{
     }
 }
 
-
-
 /**
  * 创建axios实例对象
  */
-
 const instance = axios.create({
-    timeout:5000
+    timeout: 5000
 })
 
 /**
  * 处理拦截器
  */
 
- /**
-  * 请求拦截
-  */
+/**
+ * 请求拦截
+ */
 instance.interceptors.request.use(
     config => {
-        if(config.method === "post"){
+        if (config.method === "post") {
             config.data = qs.stringify(config.data)
         }
         return config
@@ -69,7 +66,7 @@ instance.interceptors.response.use(
     response => response.status === 200 ? Promise.resolve(response) : Promise.reject(response),
     error => {
         const { response } = error;
-        errorHandle(response.status,response.info);
+        errorHandle(response.status, response.info);
     }
 )
 

@@ -1,8 +1,13 @@
+/*
+ * @Author       : WePD
+ * @Date         : 2021-11-28 10:49:40
+ */
 import axios from '../utils/request'
 
 //路径地址
 const base = {
   baseURL: 'http://localhost:8888',
+  cityUrl: '/api/aj/getcitycode',
   homehot1: '/api/home/hot1',
   homehot2: '/api/home/hot2'
 }
@@ -18,6 +23,9 @@ const api = {
     return axios.get(base.baseURL + base.homehot2, {
       params
     })
+  },
+  getCityList() {
+    return axios.get(base.cityUrl)
   }
 }
 

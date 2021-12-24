@@ -1,3 +1,8 @@
+<!--
+ * @Author       : WePD
+ * @Date         : 2021-11-27 22:51:50
+-->
+
 ### 技术栈
 
 React + redux + react-router + axios + ReactHooks
@@ -51,3 +56,6 @@ yarn add --save axios
 
 6. 关联 redux, _这个地方有很多不明白，需要再认真看一看_
 7. 根据城市的切换需要渲染不同的主页
+8. 城市列表
+   - 安装依赖 yarn add react-city-select
+   -
