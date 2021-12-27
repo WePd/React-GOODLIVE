@@ -1,6 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./index.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SearchInput from '../SearchInput';
+
+import './index.css';
 
 const NavHeader = (props) => {
   return (
@@ -15,7 +17,7 @@ const NavHeader = (props) => {
       <div className="home-header-middle">
         <div className="search-container">
           <i className="icon-search"></i>
-          <input />
+          <SearchInput />
         </div>
       </div>
     </div>
