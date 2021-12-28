@@ -1,17 +1,26 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react'
 
-export default function LoadMore() {
-  const more = useRef();
-  useEffect(() => {
-    //监听页面高度
-    const pageHigh = document.documentElement.clientHeight; //667
-    window.addEventListener('scroll', () => {
-      if (more.current) {
-        if (pageHigh > more.current.getBoundingClientRect().top) {
-          console.log('kokoko');
-        }
-      }
-    });
-  });
-  return <div ref={more}>加载更多</div>;
+export default function LoadMore(props) {
+	const more = useRef()
+	const [loadTop, setLoadTop] = useState()
+	useEffect(() => {
+		//监听页面高度
+		let timer = null
+		const pageHigh = document.documentElement.clientHeight //667
+		window.addEventListener('scroll', () => {
+			if (more.current) {
+				setLoadTop(more.current.getBoundingClientRect().top)
+				if (timer) {
+					clearTimeout(timer)
+				} else {
+					timer = setTimeout(() => {
+						if (pageHigh > loadTop) {
+							props.onLoadMore()
+						}
+					}, 300)
+				}
+			}
+		})
+	}, [loadTop])
+	return <div ref={more}>加载更多</div>
 }
