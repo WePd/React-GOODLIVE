@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from "react"
 
 export default function LoadMore(props) {
 	const more = useRef()
@@ -7,7 +7,7 @@ export default function LoadMore(props) {
 		//监听页面高度
 		let timer = null
 		const pageHigh = document.documentElement.clientHeight //667
-		window.addEventListener('scroll', () => {
+		window.addEventListener("scroll", () => {
 			if (more.current) {
 				setLoadTop(more.current.getBoundingClientRect().top)
 				if (timer) {
@@ -21,6 +21,6 @@ export default function LoadMore(props) {
 				}
 			}
 		})
-	}, [loadTop])
+	}, [props, loadTop])
 	return <div ref={more}>加载更多</div>
 }

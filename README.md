@@ -66,3 +66,8 @@ yarn add --save axios
 
 - 监听滚动事件 --- 滚动高度+视口高度 >容器列表高度
 - 下拉的时候会多次请求数据，需要节流与防抖
+
+11. mock.js
+
+- 安装 mock.js yarn add mock
+-

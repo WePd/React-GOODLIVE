@@ -1,3 +1,6 @@
+.hotproduct {
+  width: 100%;
+}
 .hotproduct h3 {
   margin-top: 10px;
   font-size: 16px;
@@ -17,7 +20,7 @@
   padding: 5px;
   float: left;
 }
-.hotproduct .hot-container ul li a p img {
+.hotproduct .hot-container ul li a img {
   width: 100%;
 }
 .hotproduct .hot-container ul li a span {
