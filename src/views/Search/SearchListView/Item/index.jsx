@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./style.css"
 import DefaultImg from "../../../../assets/images/default.png"
-import loadImageAsync from "../../../../utils/loadImg"
+import { loadImageAsync } from "../../../../utils/loadImg"
 
 export default function Item(props) {
 	const [renderImg, setRenderImg] = useState(DefaultImg)
