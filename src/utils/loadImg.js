@@ -8,7 +8,7 @@ export function loadImageAsync(url) {
 		const image = new Image()
 
 		image.onload = function () {
-			resolve(image)
+			resolve(url)
 		}
 
 		image.onerror = function () {
