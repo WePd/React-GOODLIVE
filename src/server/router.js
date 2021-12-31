@@ -5,6 +5,7 @@
 const express = require("express")
 
 const home = require("./data/home/home")
+const details = require("./data/details")
 const searchData = require("./data/search")
 
 const router = express.Router()
@@ -64,4 +65,15 @@ router.get("/search", (req, res) => {
 	})
 })
 
+//详情页
+router.get("/details", (req, res) => {
+	const id = url.parse(req.url, true).query.id
+	console.log(id)
+	res.setHeader("Access-Control-Allow-Origin", "*")
+	res.send({
+		status: 200,
+		result: "details数据请求成功！",
+		details,
+	})
+})
 module.exports = router

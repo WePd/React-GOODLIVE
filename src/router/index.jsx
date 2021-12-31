@@ -16,12 +16,16 @@ import City from "../views/City"
 import NavBottom from "../components/NavBottom"
 import Search from "../views/Search"
 
+//详情页
+import Details from "../views/Details"
+
 const AppRouter = () => {
 	return (
 		<HashRouter>
 			<Switch>
 				{/* City路由 */}
 				<Route path="/city" component={City}></Route>
+				<Route path="/details/:id" component={Details}></Route>
 				<Route path="/search/:keywords" component={Search}></Route>
 				<Layout path="/">
 					<Switch>

@@ -71,3 +71,7 @@ yarn add --save axios
 
 - 安装 mock.js yarn add mock
 -
+
+12. 详情页
+
+- 创建页面 配置路由
