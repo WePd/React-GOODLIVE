@@ -4,14 +4,14 @@ import DetailsView from "../DetailsView"
 
 export default function DetailsList(props) {
 	const [detailsList, setDetailsList] = useState({})
-	// console.log(detailsList)
+	console.log(detailsList)
 	useEffect(() => {
 		api.details({ id: props.id }).then((res) => {
-			if (res.data.status === 200) {
-				setDetailsList(res)
-				console.log(res.data.data)
+			if (res.status === 200) {
+				console.log("kok")
+				setDetailsList(res.data.details)
 			}
 		})
 	}, [])
-	return <div>{<DetailsView data={detailsList} />}</div>
+	return <div>{detailsList.imgs ? <DetailsView data={detailsList} id={props.id} /> : <div>数据加载中.....</div>}</div>
 }

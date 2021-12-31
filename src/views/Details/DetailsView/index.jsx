@@ -1,11 +1,12 @@
 import React from "react"
+import Swipre from "../../../components/Swiper"
 
 export default function DetailsView(props) {
 	let data = props.data
-	// console.log(data)
+	console.log(data)
 	return (
 		<div>
-			<h3>test</h3>
+			<Swipre banners={data.imgs} />
 		</div>
 	)
 }
