@@ -7,7 +7,8 @@ export default function LoadMore(props) {
 		//监听页面高度
 		let timer = null
 		const pageHigh = document.documentElement.clientHeight //667
-		window.addEventListener("scroll", () => {
+
+		function scrollHandle() {
 			if (more.current) {
 				setLoadTop(more.current.getBoundingClientRect().top)
 				if (timer) {
@@ -20,7 +21,12 @@ export default function LoadMore(props) {
 					}, 300)
 				}
 			}
-		})
+		}
+		window.addEventListener("scroll", scrollHandle)
+		return () => {
+			window.removeEventListener("scroll", scrollHandle)
+			clearTimeout(timer)
+		}
 	}, [props, loadTop])
 	return <div ref={more}>加载更多</div>
 }

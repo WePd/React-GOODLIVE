@@ -8,12 +8,26 @@ export default function SearchList(props) {
 	const [hasMore, setHasMore] = useState(false)
 
 	useEffect(() => {
-		http()
-	}, [props])
+		api
+			.search({
+				search: props.search,
+			})
+			.then((res) => {
+				if (res.status === 200) {
+					setSearchData((searchData) => searchData.concat(res.data.data.data))
+					setHasMore(res.data.data.hasMore)
+				}
+			})
+			.catch((err) => {
+				console.log(err.message)
+			})
+		return () => {
+			setSearchData([])
+			setHasMore(false)
+		}
+	}, [props.search])
+
 	function onLoadMoreHandle() {
-		http()
-	}
-	function http() {
 		api
 			.search({
 				search: props.search,

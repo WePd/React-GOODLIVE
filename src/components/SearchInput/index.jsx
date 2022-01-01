@@ -27,7 +27,7 @@ function SearchInput(props) {
 			dispatch(searchAction.searchDate(""))
 		}
 		setKeyWords(reduxKeyWords.search)
-	}, [params.keywords, reduxKeyWords.search])
+	}, [params.keywords, reduxKeyWords.search, dispatch])
 
 	function changeHandle(e) {
 		setKeyWords(e.target.value)
