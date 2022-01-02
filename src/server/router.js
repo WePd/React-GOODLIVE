@@ -76,4 +76,18 @@ router.get("/details", (req, res) => {
 		details,
 	})
 })
+
+// 登录
+router.post("/login", (req, res) => {
+	res.setHeader("Access-Control-Allow-Origin", "*")
+	res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type")
+	console.log(req.body)
+	// console.log(req)
+	// console.log(username)
+	res.send({
+		status: 200,
+		token: "kuiasd098q2nmn2190isamdk09asjdmk209jmsaodkaskld",
+		// nick: username,
+	})
+})
 module.exports = router

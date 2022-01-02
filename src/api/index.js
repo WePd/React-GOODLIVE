@@ -12,6 +12,7 @@ const base = {
 	homehot2: "/api/home/hot2",
 	search: "/api/search",
 	details: "/api/details",
+	login: "/api/login",
 }
 //  请求方法
 const api = {
@@ -39,6 +40,16 @@ const api = {
 		return axios.get(base.baseURL + base.details, {
 			params,
 		})
+	},
+
+	/**
+	 * @description login
+	 * @param {*} params
+	 * @return {*}
+	 */
+	login(params) {
+		console.log(params)
+		return axios.post(base.baseURL + base.login, params)
 	},
 }
 
