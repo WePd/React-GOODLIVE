@@ -5,10 +5,12 @@
 import { combineReducers } from "redux"
 import city from "./citys"
 import search from "./searchDate"
+import login from "./login"
 
 const rootReducer = combineReducers({
 	city,
 	search,
+	login,
 })
 
 export default rootReducer

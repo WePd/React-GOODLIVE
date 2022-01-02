@@ -6,6 +6,7 @@ import Tabs from "../../../components/Tabs"
 import "./style.css"
 
 import Comment from "../Comment"
+import Favorite from "../Favorite"
 
 export default function DetailsView(props) {
 	let data = props.data
@@ -16,7 +17,7 @@ export default function DetailsView(props) {
 			<div>
 				<Swipre banners={data.imgs} />
 				<Tabs>
-					<div label="详情">
+					<div label="">
 						<div className="detail-info">
 							<h3>{data.title}</h3>
 							<div className="box">
@@ -51,10 +52,11 @@ export default function DetailsView(props) {
 						</div>
 					</div>
 				</Tabs>
-				<div>
+				{/* <div>
 					<Comment id={props.id} />
-				</div>
+				</div> */}
 			</div>
+			<Favorite />
 		</div>
 	)
 }

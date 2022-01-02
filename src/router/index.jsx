@@ -19,6 +19,9 @@ import Search from "../views/Search"
 //详情页
 import Details from "../views/Details"
 
+//登录页
+import Login from "../views/Login"
+
 const AppRouter = () => {
 	return (
 		<HashRouter>
@@ -26,6 +29,7 @@ const AppRouter = () => {
 				{/* City路由 */}
 				<Route path="/city" component={City}></Route>
 				<Route path="/details/:id" component={Details}></Route>
+				<Route path="/login" component={Login}></Route>
 				<Route path="/search/:keywords" component={Search}></Route>
 				<Layout path="/">
 					<Switch>
