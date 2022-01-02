@@ -1,9 +1,9 @@
 import { LOGIN, LOGOUT } from "../constants/index"
 
-export function login(message) {
+export function login(user) {
 	return {
 		type: LOGIN,
-		message,
+		user,
 	}
 }
 
