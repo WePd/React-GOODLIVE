@@ -56,7 +56,7 @@ export default function DetailsView(props) {
 					<Comment id={props.id} />
 				</div> */}
 			</div>
-			<Favorite />
+			<Favorite id={props.id} />
 		</div>
 	)
 }

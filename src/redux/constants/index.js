@@ -8,3 +8,7 @@ export const UPDATE_SEARCH = "UPDATE_SEARCH"
 
 export const LOGIN = "LOGIN"
 export const LOGOUT = "LOGOUT"
+
+//收藏 取消收藏
+export const FAVORITE = "FAVORITE"
+export const FAVORITE_CANCEL = "FAVORITE_CANCEL"
