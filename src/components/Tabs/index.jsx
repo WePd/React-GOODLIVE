@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import "./style.css"
 
 export default function Tabs(props) {
 	const [currentIndex, setCurrentIndex] = useState(0)

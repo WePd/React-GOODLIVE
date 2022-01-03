@@ -7,12 +7,13 @@ const express = require("express")
 const home = require("./data/home/home")
 const details = require("./data/details")
 const searchData = require("./data/search")
-
+const commentDate = require("./data/comment")
 const router = express.Router()
 
 const Mock = require("mockjs")
 
 const url = require("url")
+const { readSync } = require("fs")
 const Random = Mock.Random
 
 //在渲染的时候需要请求不同的城市页面，将城市作为参数传到后台
@@ -81,13 +82,21 @@ router.get("/details", (req, res) => {
 router.post("/login", (req, res) => {
 	res.setHeader("Access-Control-Allow-Origin", "*")
 	res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type")
-	// console.log(req.body)
-	// console.log(req)
-	// console.log(username)
 	res.send({
 		status: 200,
 		token: "kuiasd098q2nmn2190isamdk09asjdmk209jmsaodkaskld",
 		nick: "lqy",
+	})
+})
+
+// 评论
+router.get("/comment", (req, res) => {
+	res.setHeader("Access-Control-Allow-Origin", "*")
+	const id = url.parse(req.url, true).query.id
+	console.log(id)
+	res.send({
+		status: 200,
+		data: commentDate,
 	})
 })
 module.exports = router

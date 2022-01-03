@@ -13,6 +13,7 @@ const base = {
 	search: "/api/search",
 	details: "/api/details",
 	login: "/api/login",
+	comment: "/api/comment",
 }
 //  请求方法
 const api = {
@@ -51,6 +52,9 @@ const api = {
 		console.log(params)
 		return axios.post(base.baseURL + base.login, params)
 	},
-}
 
+	comment(params) {
+		return axios.get(base.baseURL + base.comment, { params })
+	},
+}
 export default api

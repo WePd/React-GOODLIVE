@@ -17,7 +17,7 @@ export default function DetailsView(props) {
 			<div>
 				<Swipre banners={data.imgs} />
 				<Tabs>
-					<div label="">
+					<div label="详情">
 						<div className="detail-info">
 							<h3>{data.title}</h3>
 							<div className="box">
@@ -51,10 +51,12 @@ export default function DetailsView(props) {
 							</div>
 						</div>
 					</div>
+					<div label="评价">
+						<div>
+							<Comment id={props.id} />
+						</div>
+					</div>
 				</Tabs>
-				{/* <div>
-					<Comment id={props.id} />
-				</div> */}
 			</div>
 			<Favorite id={props.id} />
 		</div>

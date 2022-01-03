@@ -12,6 +12,7 @@ function FavoriteView(props) {
 	const [sizeBtn, setSizeBtn] = useState({
 		size: "large",
 	})
+	const [isCllect, setIsCllect] = useState(true)
 	const dispatch = useDispatch()
 	function favoriteHandle() {
 		if (props.user.token) {
@@ -23,9 +24,11 @@ function FavoriteView(props) {
 			let id = props.id
 			if (favorites.some((item) => item === id)) {
 				//true说明已经收藏
+				setIsCllect(true)
 				dispatch(favoritesAction.calcelFavorite(id))
 			} else {
 				//false说明还没有收藏
+				setIsCllect(false)
 				dispatch(favoritesAction.setFavorite(id))
 			}
 		} else {
@@ -34,9 +37,15 @@ function FavoriteView(props) {
 	}
 	return (
 		<div className="fav-btn">
-			<Button type="primary" size={sizeBtn.size} onClick={favoriteHandle}>
-				收藏
-			</Button>
+			{!isCllect ? (
+				<Button type="primary" size={sizeBtn.size} onClick={favoriteHandle}>
+					已收藏
+				</Button>
+			) : (
+				<Button type="primary" size={sizeBtn.size} onClick={favoriteHandle}>
+					收藏
+				</Button>
+			)}
 			<Button type="primary" size={sizeBtn.size}>
 				购买
 			</Button>

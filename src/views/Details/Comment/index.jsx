@@ -5,11 +5,11 @@ import api from "../../../api"
 export default function Comment(props) {
 	const id = props.id
 	console.log(id)
-	useEffect(() => {})
-	return (
-		<div>
-			<h3>comment</h3>
-			<CommentView />
-		</div>
-	)
+	const [commentList, setCommentList] = useState([])
+	useEffect(() => {
+		api.comment().then((res) => {
+			setCommentList(res.data.data.data)
+		})
+	}, [])
+	return <div>{commentList.length ? <CommentView commentList={commentList} /> : <div>评论加载中.......</div>}</div>
 }

@@ -22,6 +22,9 @@ import Details from "../views/Details"
 //登录页
 import Login from "../views/Login"
 
+//购物车
+import Cart from "../views/Cart"
+
 const AppRouter = () => {
 	return (
 		<HashRouter>
@@ -31,6 +34,7 @@ const AppRouter = () => {
 				<Route path="/details/:id" component={Details}></Route>
 				<Route path="/login" component={Login}></Route>
 				<Route path="/search/:keywords" component={Search}></Route>
+				<Route path="/cart" component={Cart}></Route>
 				<Layout path="/">
 					<Switch>
 						<Route exact path="/" component={Home}></Route>
