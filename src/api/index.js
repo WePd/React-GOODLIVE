@@ -14,6 +14,8 @@ const base = {
 	details: "/api/details",
 	login: "/api/login",
 	comment: "/api/comment",
+	car: "/api/car",
+	carComment: "/api/car/comment",
 }
 //  请求方法
 const api = {
@@ -49,12 +51,18 @@ const api = {
 	 * @return {*}
 	 */
 	login(params) {
-		console.log(params)
+		// console.log(params)
 		return axios.post(base.baseURL + base.login, params)
 	},
 
 	comment(params) {
 		return axios.get(base.baseURL + base.comment, { params })
+	},
+	car(params) {
+		return axios.get(base.baseURL + base.car, { params })
+	},
+	carComment(params) {
+		return axios.post(base.baseURL + base.carComment, params)
 	},
 }
 export default api

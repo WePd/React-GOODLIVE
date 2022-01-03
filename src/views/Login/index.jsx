@@ -6,8 +6,9 @@ import * as loginAction from "../../redux/actions/login"
 export default function Login() {
 	const dispatch = useDispatch()
 	function loginMessage(user) {
-		console.log(user)
+		// console.log(user)
 		dispatch(loginAction.login(user))
+		localStorage.setItem("user", JSON.stringify(user))
 		window.history.back()
 	}
 	return (

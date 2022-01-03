@@ -6,14 +6,13 @@ const express = require("express")
 
 const home = require("./data/home/home")
 const details = require("./data/details")
-const searchData = require("./data/search")
 const commentDate = require("./data/comment")
+const shopList = require("./data/shopList")
 const router = express.Router()
 
 const Mock = require("mockjs")
 
 const url = require("url")
-const { readSync } = require("fs")
 const Random = Mock.Random
 
 //在渲染的时候需要请求不同的城市页面，将城市作为参数传到后台
@@ -99,4 +98,28 @@ router.get("/comment", (req, res) => {
 		data: commentDate,
 	})
 })
+
+//购物陈评价
+router.get("/car", (req, res) => {
+	res.setHeader("Access-Control-Allow-Origin", "*")
+	const username = url.parse(req.url, true).query.username
+	console.log(username)
+	res.send({
+		status: 200,
+		data: shopList,
+	})
+})
+
+//评价
+router.post("/car/comment", (req, res) => {
+	res.setHeader("Access-Control-Allow-Origin", "*")
+	const { username, id, content } = req.body
+	console.log(req)
+	console.log(username, id, content)
+	res.send({
+		status: 200,
+		msg: "Succeed",
+	})
+})
+
 module.exports = router

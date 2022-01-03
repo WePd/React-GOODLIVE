@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Button } from "antd"
 import { withRouter } from "react-router-dom"
 import { useDispatch } from "react-redux"
@@ -14,6 +14,9 @@ function FavoriteView(props) {
 	})
 	const [isCllect, setIsCllect] = useState(true)
 	const dispatch = useDispatch()
+	useEffect(() => {
+		setSizeBtn({ size: "large" })
+	}, [])
 	function favoriteHandle() {
 		if (props.user.token) {
 			//允许收藏

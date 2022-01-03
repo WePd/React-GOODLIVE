@@ -12,7 +12,7 @@ export default function LoginView(props) {
 
 	function onSubmitHandle(e) {
 		e.preventDefault()
-		console.log(username, password)
+		// console.log(username, password)
 		const { isValid, errors } = validatorInput({ username, password })
 		if (!isValid) {
 			api.login({ username, password }).then((res) => {

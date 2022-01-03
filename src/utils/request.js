@@ -60,13 +60,13 @@ instance.interceptors.request.use(
 /**
  * 响应拦截
  */
-// instance.interceptors.response.use(
-// 	// 完成了
-// 	(response) => (response.status === 200 ? Promise.resolve(response) : Promise.reject(response)),
-// 	(error) => {
-// 		const { response } = error
-// 		errorHandle(response.status, response.info)
-// 	}
-// )
+instance.interceptors.response.use(
+	// 完成了
+	(response) => (response.status === 200 ? Promise.resolve(response) : Promise.reject(response)),
+	(error) => {
+		const { response } = error
+		errorHandle(response.status, response.info)
+	}
+)
 
 export default instance
